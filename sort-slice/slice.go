@@ -25,8 +25,8 @@ func main() {
 			continue
 		}
 		intSlice = append(intSlice, num)
-	}
 
-	SortIntSlice(intSlice)
-	fmt.Println(intSlice)
+		SortIntSlice(intSlice)
+		fmt.Println(intSlice)
+	}
 }
