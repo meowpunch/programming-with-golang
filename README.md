@@ -1,15 +1,15 @@
 # Programming with Golang
 
-This repository documents my journey as a Java programmer to learn Golang. Below are the steps I plan to take to achieve this goal:
+This repository documents my journey as a Java programmer to learn Golang
 
 1. **Complete the Programming with Google Go Specialization on Coursera**: This course covers the basics of Golang, including functions, methods, interfaces, and concurrency. I will also practice Test-Driven Development (TDD) by completing the assignments in the [Learn Go With Tests](https://quii.gitbook.io/learn-go-with-tests/) book.
 
-2. **Delve into the LBC codebase with practical and advanced resources**: I plan to use the following resources to become more proficient in Golang:
+2. **Delve into the LBC codebase with practical and advanced resources**:
 
    - [Effective Go](https://go.dev/doc/effective_go): A guide to writing clear, idiomatic Go code.
    - [uber-go/guide](https://github.com/uber-go/guide/blob/master/style.md): A style guide that provides recommendations for Go programming.
    
-3. **Build a slack project to apply expertise and get hands-on experience**: I will apply my newfound knowledge of Golang to build a project in Slack, which will allow me to gain practical experience and solidify my understanding of the language.
+3. **Build a slack project to apply expertise and get hands-on experience**: Apply my newfound knowledge of Golang to build a project in Slack, which will allow me to gain hands-on experience and solidify my understanding of the language.
 
 ## Additional Resources
 
