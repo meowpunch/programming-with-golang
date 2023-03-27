@@ -2,7 +2,7 @@
 
 This repository documents my journey as a Java programmer to learn Golang
 
-1. **Complete the Programming with Google Go Specialization on Coursera**: This course covers the basics of Golang, including functions, methods, interfaces, and concurrency. I will also practice Test-Driven Development (TDD) by completing the assignments in the [Learn Go With Tests](https://quii.gitbook.io/learn-go-with-tests/) book.
+1. **Complete the [Programming with Google Go Specialization](https://www.coursera.org/specializations/google-golang) on Coursera**: This course covers the basics of Golang, including functions, methods, interfaces, and concurrency. I will also practice Test-Driven Development (TDD) by completing the assignments in the [Learn Go With Tests](https://quii.gitbook.io/learn-go-with-tests/) book.
 
 2. **Delve into the LBC codebase with practical and advanced resources**:
 
