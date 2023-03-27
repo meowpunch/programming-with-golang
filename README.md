@@ -1,6 +1,6 @@
 # Programming with Golang
 
-This repository documents my journey of transitioning from a Java programmer to learning Golang. Below are the steps I plan to take to achieve this goal:
+This repository documents my journey as a Java programmer to learn Golang. Below are the steps I plan to take to achieve this goal:
 
 1. **Complete the Programming with Google Go Specialization on Coursera**: This course covers the basics of Golang, including functions, methods, interfaces, and concurrency. I will also practice Test-Driven Development (TDD) by completing the assignments in the [Learn Go With Tests](https://quii.gitbook.io/learn-go-with-tests/) book.
 
