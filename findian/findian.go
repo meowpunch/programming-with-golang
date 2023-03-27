@@ -3,11 +3,18 @@ package main
 import (
 	"fmt"
 	"regexp"
+	"strings"
 )
 
 func FindIan(s string) bool {
 	re := regexp.MustCompile(`(?i)^i.*a.*n$`)
 	return re.MatchString(s)
+}
+
+func FindIanWithoutRegex(s string) bool {
+	return strings.HasPrefix(strings.ToLower(s), "i") &&
+		strings.Contains(strings.ToLower(s), "a") &&
+		strings.HasSuffix(strings.ToLower(s), "n")
 }
 
 func main() {
