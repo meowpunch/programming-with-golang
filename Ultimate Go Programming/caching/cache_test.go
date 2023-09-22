@@ -1,3 +1,9 @@
+// All material is licensed under the Apache License Version 2.0, January 2004
+// http://www.apache.org/licenses/LICENSE-2.0
+
+// go test -run none -bench . -benchtime 3s
+
+// Tests to show how Data Oriented Design matters.
 package caching
 
 import "testing"
