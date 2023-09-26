@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"context"
 	"encoding/json"
-	"github.com/IBM/sarama"
+	"github.com/Shopify/sarama"
 	"github.com/sirupsen/logrus"
 	"go.uber.org/fx"
 	"net/http"
@@ -28,9 +28,15 @@ func main() {
 	app.Run()
 }
 
-func NewConsumer() sarama.Consumer {
-	consumer, _ := sarama.NewConsumer([]string{"kafka:9093"}, nil)
-	return consumer
+func NewConsumer(logger *logrus.Logger) (sarama.Consumer, error) {
+	config := sarama.NewConfig()
+	config.Producer.Return.Successes = true
+	consumer, err := sarama.NewConsumer([]string{"kafka:9093"}, config)
+	if err != nil {
+		logger.Error("Failed to create producer: ", err)
+		return nil, err
+	}
+	return consumer, nil
 }
 
 func NewLogger() *logrus.Logger {

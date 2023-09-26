@@ -3,7 +3,7 @@ package main
 import (
 	"context"
 	"encoding/json"
-	"github.com/IBM/sarama"
+	"github.com/Shopify/sarama"
 	"github.com/go-chi/chi"
 	"github.com/sirupsen/logrus"
 	"go.uber.org/fx"
@@ -33,9 +33,15 @@ func NewRouter() *chi.Mux {
 	return chi.NewRouter()
 }
 
-func NewProducer() sarama.SyncProducer {
-	producer, _ := sarama.NewSyncProducer([]string{"kafka:9093"}, nil)
-	return producer
+func NewProducer(logger *logrus.Logger) (sarama.SyncProducer, error) {
+	config := sarama.NewConfig()
+	config.Producer.Return.Successes = true
+	producer, err := sarama.NewSyncProducer([]string{"kafka:9093"}, config)
+	if err != nil {
+		logger.Error("Failed to create producer: ", err)
+		return nil, err
+	}
+	return producer, nil
 }
 
 func NewLogger() *logrus.Logger {
@@ -52,9 +58,16 @@ func RegisterHandlers(lc fx.Lifecycle, router *chi.Mux, producer sarama.SyncProd
 					return
 				}
 				message, _ := json.Marshal(payment)
+				if producer == nil {
+					logger.Error("Producer is not initialized")
+					http.Error(w, "Internal Server Error", http.StatusInternalServerError)
+					return
+				}
 				_, _, err := producer.SendMessage(&sarama.ProducerMessage{Topic: "payments", Value: sarama.ByteEncoder(message)})
 				if err != nil {
 					logger.Error("Failed to publish message", err)
+					http.Error(w, "Internal Server Error", http.StatusInternalServerError)
+					return
 				}
 			})
 			go http.ListenAndServe(":8080", router)

@@ -1,12 +1,17 @@
 version: '3'
 services:
   zookeeper:
-    image: wurstmeister/zookeeper:3.4.6
+    image: wurstmeister/zookeeper
     ports:
       - "2181:2181"
 
   kafka:
-    image: wurstmeister/kafka:2.12-2.2.1
+    image: wurstmeister/kafka
+    healthcheck:
+      test: nc -z localhost 9092 || exit -1
+      interval: 5s
+      timeout: 10s
+      retries: 10
     ports:
       - "9092:9092"
     environment:
@@ -23,13 +28,14 @@ services:
     ports:
       - "8080:8080"
     depends_on:
-      - kafka
+      kafka:
+        condition: service_healthy
 
   migration-consumer:
     build: ./migration-consumer
     depends_on:
-      - kafka
-      - purchase-api
+      kafka:
+        condition: service_healthy
 
   purchase-api:
     build: ./purchase-api

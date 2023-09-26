@@ -3,7 +3,7 @@ module migration-api
 go 1.21.1
 
 require (
-	github.com/IBM/sarama v1.41.2
+	github.com/Shopify/sarama v1.38.1
 	github.com/go-chi/chi v1.5.5
 	github.com/sirupsen/logrus v1.9.3
 	go.uber.org/fx v1.20.0
