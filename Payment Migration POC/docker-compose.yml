@@ -24,7 +24,7 @@ services:
       - zookeeper
 
   migration-api:
-    build: ./migration-api
+    build: migration-api
     ports:
       - "8080:8080"
     depends_on:
@@ -32,12 +32,12 @@ services:
         condition: service_healthy
 
   migration-consumer:
-    build: ./migration-consumer
+    build: migration-consumer
     depends_on:
       kafka:
         condition: service_healthy
 
   purchase-api:
-    build: ./purchase-api
+    build: purchase-api
     ports:
       - "8081:8081"

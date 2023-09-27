@@ -4,8 +4,9 @@ This repository documents my journey as a Java programmer to learn Golang
 
 1. **Complete the [Programming with Google Go Specialization](https://www.coursera.org/specializations/google-golang) on Coursera** [[README](https://github.com/meowpunch/programming-with-golang/blob/main/Programming%20with%20Google%20Go%20Specialization/README.md)]: This course covers the basics of Golang, including functions, methods, interfaces, and concurrency. I will also practice Test-Driven Development (TDD) by completing the assignments in the [Learn Go With Tests](https://quii.gitbook.io/learn-go-with-tests/) book.
 
-2. **Delve into opensource project in Go with practical and advanced resources**:
+2. **Delve into more practical and advanced resources**:
 
+   - [Ultimate Go Programming](https://www.oreilly.com/library/view/ultimate-go-programming/9780135261651/): Underlying and concrete mindset needed to design and program software with Go
    - [Effective Go](https://go.dev/doc/effective_go): A guide to writing clear, idiomatic Go code.
    - [uber-go/guide](https://github.com/uber-go/guide/blob/master/style.md): A style guide that provides recommendations for Go programming.
    
